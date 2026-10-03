@@ -1,0 +1,35 @@
+[project]
+name = "bill-ocr"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "Anish Roy", email = "aroy262692@gmail.com" }
+]
+requires-python = ">=3.13"
+dependencies = [
+    "fastapi",
+    "uvicorn[standard]",
+    "python-multipart",
+    "ollama>=0.5",
+    "pydantic>=2",
+    "pillow",
+    "pillow-heif",
+    "gspread",
+    "rapidocr-onnxruntime>=1.4.4",
+    "opencv-python-headless>=5.0.0.93",
+    "numpy>=2.3.5",
+    "datasets>=5.0.1",
+    "paddleocr>=3.7.0",
+    "paddlepaddle>=3.3.1",
+]
+
+[project.scripts]
+bill-ocr = "bill_ocr:main"
+
+[build-system]
+requires = ["uv_build>=0.12.19,<0.13.0"]
+build-backend = "uv_build"
+
+[project.optional-dependencies]
+paddle = ["paddlepaddle", "paddleocr"]
